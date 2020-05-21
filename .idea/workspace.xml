@@ -2,7 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="85fd7484-4095-4b20-aa78-d383c97d8391" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/atoms/Container/Container.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/atoms/Container/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/molecules/PublicRoute/PublicRoute.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/molecules/PublicRoute/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/organisms/Footer/Footer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/organisms/Footer/Footer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/organisms/Footer/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/organisms/Header/Header.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/organisms/Header/Header.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/organisms/Header/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/organisms/List/List.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/organisms/List/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/organisms/Search/Search.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/organisms/Search/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/pages/Page404/Page404.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/pages/Page404/Page404.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/pages/Page404/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/pages/Routes/Routes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/pages/Routes/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/pages/Routes/route.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/templates/Chrome/Chrome.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/templates/Chrome/Chrome.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/templates/Chrome/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/icons/hamburger.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/icons/inbox.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/icons/logo.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,13 +55,30 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/atoms/Container" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/icons" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/src/components/organisms/Search" />
+      <recent name="$PROJECT_DIR$/src/components/organisms/List" />
+      <recent name="$PROJECT_DIR$/src/components/organisms" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/atoms/Container" />
+      <recent name="$PROJECT_DIR$/src/components/molecules/PublicRoute" />
+      <recent name="$PROJECT_DIR$/src/components/organisms/Footer" />
+      <recent name="$PROJECT_DIR$/src/components/organisms/Header" />
+      <recent name="$PROJECT_DIR$/src/components/organisms/List" />
+    </key>
   </component>
   <component name="RunManager" selected="npm.npm start">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
@@ -57,17 +105,56 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1590030893238</updated>
-      <workItem from="1590030895788" duration="264000" />
+      <workItem from="1590030895788" duration="9199000" />
     </task>
+    <task id="LOCAL-00001" summary="chore: Add in all ReactND start files on top of CRA">
+      <created>1590031371733</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1590031371733</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="chore: Add in all ReactND start files on top of CRA" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: Add in all ReactND start files on top of CRA" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="314" y="321" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1590088753580">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="1545" y="-350" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.800/-640.-1080.1920.1080/1280.-1120.1080.1920@1280.-1120.1080.1920" timestamp="1590081245216" />
+    <state x="314" y="321" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.800@0.0.1280.800" timestamp="1590088753580" />
+    <state x="329" y="298" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1590094700675">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="1558" y="-406" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.800/-640.-1080.1920.1080/1280.-1120.1080.1920@1280.-1120.1080.1920" timestamp="1590084010480" />
+    <state x="329" y="298" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.800@0.0.1280.800" timestamp="1590094700675" />
+    <state x="234" y="2" key="CommitChangelistDialog2" timestamp="1590031371360">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="234" y="2" key="CommitChangelistDialog2/0.0.1280.800@0.0.1280.800" timestamp="1590031371360" />
     <state x="496" y="300" key="Github.ShareDialog" timestamp="1590031147293">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="496" y="300" key="Github.ShareDialog/0.0.1280.800@0.0.1280.800" timestamp="1590031147293" />
+    <state x="240" y="140" key="Vcs.Push.Dialog.v2" timestamp="1590031373372">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="240" y="140" key="Vcs.Push.Dialog.v2/0.0.1280.800@0.0.1280.800" timestamp="1590031373372" />
+    <state x="306" y="157" width="667" height="486" key="find.popup" timestamp="1590094309400">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="306" y="157" width="667" height="486" key="find.popup/0.0.1280.800@0.0.1280.800" timestamp="1590094309400" />
+    <state x="243" y="188" width="795" height="282" key="search.everywhere.popup" timestamp="1590094303844">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="1485" y="-669" width="670" height="676" key="search.everywhere.popup/0.0.1280.800/-640.-1080.1920.1080/1280.-1120.1080.1920@1280.-1120.1080.1920" timestamp="1590083523423" />
+    <state x="243" y="188" width="795" height="282" key="search.everywhere.popup/0.0.1280.800@0.0.1280.800" timestamp="1590094303844" />
   </component>
 </project>

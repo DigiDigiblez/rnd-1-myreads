@@ -66,6 +66,7 @@ body, .app {
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   font-size: 0;
   outline: 0;
+  margin-bottom: 30px;
 }
 
 .open-search button:hover {
@@ -74,9 +75,7 @@ body, .app {
 
 
 /* search page */
-
 .search-books-bar {
-  position: fixed;
   width: 100%;
   top: 0;
   left: 0;
