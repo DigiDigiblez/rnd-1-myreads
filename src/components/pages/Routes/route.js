@@ -1,4 +1,4 @@
 export const ROUTES = {
-    LIST: "/",
-    SEARCH: "/search",
+  LIST: "/",
+  SEARCH: "/search"
 };

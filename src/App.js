@@ -1,7 +1,6 @@
-import './App.css'
+import "./App.css";
 
-import React from 'react'
-
+import React from "react";
 import { BrowserRouter } from "react-router-dom";
 
 import Routes from "./components/pages/Routes/Routes";
@@ -9,10 +8,10 @@ import Routes from "./components/pages/Routes/Routes";
 
 const BooksApp = () => {
   return (
-      <BrowserRouter>
-        <Routes />
-      </BrowserRouter>
-  )
+    <BrowserRouter>
+      <Routes />
+    </BrowserRouter>
+  );
 };
 
-export default BooksApp
+export default BooksApp;
