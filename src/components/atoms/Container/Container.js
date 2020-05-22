@@ -3,7 +3,7 @@ import React from "react";
 
 const Container = ({ children, className }) => {
   Container.propTypes = {
-    children: PropTypes.arrayOf(PropTypes.node).isRequired,
+    children: PropTypes.arrayOf(PropTypes.any).isRequired,
     className: PropTypes.string.isRequired
   };
 

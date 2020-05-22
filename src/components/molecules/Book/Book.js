@@ -1,8 +1,9 @@
 import "./Book.css";
 
+import camelCase from "lodash.camelcase";
 import PropTypes from "prop-types";
-
 import React from "react";
+
 import { update } from "../../../BooksAPI";
 
 const Book = ({ id, title, authors, cover, shelf, setLastBookChanged }) => {
@@ -11,10 +12,15 @@ const Book = ({ id, title, authors, cover, shelf, setLastBookChanged }) => {
   Book.propTypes = {
     id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
-    authors: PropTypes.arrayOf(PropTypes.string).isRequired,
-    cover: PropTypes.string.isRequired,
+    authors: PropTypes.arrayOf(PropTypes.string),
+    cover: PropTypes.string,
     shelf: PropTypes.string.isRequired,
     setLastBookChanged: PropTypes.func.isRequired
+  };
+
+  Book.defaultProps = {
+    cover: null,
+    authors: []
   };
 
   const handleShelfChange = ({ target }) =>
@@ -24,44 +30,41 @@ const Book = ({ id, title, authors, cover, shelf, setLastBookChanged }) => {
     <li key={id}>
       <div className={baseclass}>
         <div className="book-top">
-          <div
-            className="book-cover"
-            style={{
-              width: 128,
-              height: 190,
-              backgroundImage: `url(${cover})`
-            }}
-          />
+          {
+            <div
+              className="book-cover"
+              style={{
+                width: 128,
+                height: 180,
+                backgroundImage: `url(${cover})`
+              }}
+            />
+          }
           <div className="book-shelf-changer">
-            <select onChange={handleShelfChange}>
+            <select
+              onChange={handleShelfChange}
+              defaultValue={camelCase(shelf)}
+            >
               <option value="move" disabled>
                 Move to...
               </option>
-              <option
-                value="currentlyReading"
-                selected={shelf === "Currently Reading"}
-              >
-                Currently Reading
-              </option>
-              <option value="wantToRead" selected={shelf === "Want to Read"}>
-                Want to Read
-              </option>
-              <option value="read" selected={shelf === "Read"}>
-                Read
-              </option>
+              <option value="currentlyReading">Currently Reading</option>
+              <option value="wantToRead">Want to Read</option>
+              <option value="read">Read</option>
               <option value="none">None</option>
             </select>
           </div>
         </div>
         <div className="book-title">{title}</div>
         <div className="book-authors">
-          {authors.map((author, i) => (
-            <span key={author} className="author">
-              {author}
-              {/* Add comma only if more than one author and not last author */}
-              {authors.length > 1 && i <= authors.length - 2 && ","}
-            </span>
-          ))}
+          {authors &&
+            authors.map((author, i) => (
+              <span key={author} className="author">
+                {author}
+                {/* Add comma only if more than one author and not last author */}
+                {authors.length > 1 && i <= authors.length - 2 && ","}
+              </span>
+            ))}
         </div>
       </div>
     </li>

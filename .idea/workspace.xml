@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="85fd7484-4095-4b20-aa78-d383c97d8391" name="Default Changelist" comment="">
+    <list default="true" id="85fd7484-4095-4b20-aa78-d383c97d8391" name="Default Changelist" comment="feat: Search functionality&#10;&#10;Added search functionality, including error handling for bad searching, searches with no authors, and searches with no thumbnail (added fallback thumbnail).">
+      <change afterPath="$PROJECT_DIR$/src/icons/fallback-thumbnail.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/atoms/Container/Container.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/atoms/Container/Container.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/molecules/Book/Book.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/molecules/Book/Book.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/molecules/PublicRoute/PublicRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/molecules/PublicRoute/PublicRoute.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/organisms/Bookshelf/Bookshelf.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/organisms/Bookshelf/Bookshelf.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/organisms/Search/Search.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/organisms/Search/Search.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/templates/Chrome/Chrome.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/templates/Chrome/Chrome.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +83,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1590030893238</updated>
-      <workItem from="1590030895788" duration="23056000" />
+      <workItem from="1590030895788" duration="28194000" />
     </task>
     <task id="LOCAL-00001" summary="chore: Add in all ReactND start files on top of CRA">
       <created>1590031371733</created>
@@ -126,7 +127,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590121272192</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="feat: PropTypes&#10;&#10;Added PropTypes for all components.">
+      <created>1590121960526</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1590121960526</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -149,7 +157,8 @@
     <MESSAGE value="refactor: Remove redundant duplicate code for List&#10;&#10;List now maps over Bookshelves and their respective Books from a local hook state. Additionally, carried out some minor housekeeping." />
     <MESSAGE value="feat: Retrieve books from API&#10;&#10;List now maps over Bookshelves and their respective Books from the API data rather than a local hook state." />
     <MESSAGE value="feat: Move books between shelves&#10;&#10;Books can now move between shelves." />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Move books between shelves&#10;&#10;Books can now move between shelves." />
+    <MESSAGE value="feat: PropTypes&#10;&#10;Added PropTypes for all components." />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: PropTypes&#10;&#10;Added PropTypes for all components." />
   </component>
   <component name="WindowStateProjectService">
     <state x="314" y="321" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1590088753580">
@@ -166,10 +175,14 @@
     </state>
     <state x="1558" y="-406" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.800/-640.-1080.1920.1080/1280.-1120.1080.1920@1280.-1120.1080.1920" timestamp="1590084010480" />
     <state x="329" y="298" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.800@0.0.1280.800" timestamp="1590094700675" />
-    <state x="234" y="23" width="815" height="724" key="CommitChangelistDialog2" timestamp="1590121272015">
+    <state x="234" y="23" width="815" height="724" key="CommitChangelistDialog2" timestamp="1590128846850">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="234" y="23" width="815" height="724" key="CommitChangelistDialog2/0.0.1280.800@0.0.1280.800" timestamp="1590121272015" />
+    <state x="234" y="23" width="815" height="724" key="CommitChangelistDialog2/0.0.1280.800@0.0.1280.800" timestamp="1590128846850" />
+    <state x="100" y="100" width="1080" height="600" key="DiffContextDialog" timestamp="1590128330721">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="100" y="100" width="1080" height="600" key="DiffContextDialog/0.0.1280.800@0.0.1280.800" timestamp="1590128330721" />
     <state x="294" y="185" width="755" height="615" key="EditFileWatcherDialog" timestamp="1590111460258">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
@@ -182,18 +195,18 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="149" y="39" key="SettingsEditor/0.0.1280.800@0.0.1280.800" timestamp="1590111461663" />
-    <state x="240" y="140" key="Vcs.Push.Dialog.v2" timestamp="1590121273779">
+    <state x="240" y="140" key="Vcs.Push.Dialog.v2" timestamp="1590121961728">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="240" y="140" key="Vcs.Push.Dialog.v2/0.0.1280.800@0.0.1280.800" timestamp="1590121273779" />
-    <state x="306" y="157" width="667" height="486" key="find.popup" timestamp="1590117518381">
+    <state x="240" y="140" key="Vcs.Push.Dialog.v2/0.0.1280.800@0.0.1280.800" timestamp="1590121961728" />
+    <state x="306" y="157" width="667" height="486" key="find.popup" timestamp="1590127620132">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="306" y="157" width="667" height="486" key="find.popup/0.0.1280.800@0.0.1280.800" timestamp="1590117518381" />
-    <state x="243" y="188" width="795" height="282" key="search.everywhere.popup" timestamp="1590114412804">
+    <state x="306" y="157" width="667" height="486" key="find.popup/0.0.1280.800@0.0.1280.800" timestamp="1590127620132" />
+    <state x="243" y="188" width="795" height="282" key="search.everywhere.popup" timestamp="1590128196155">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="1485" y="-669" width="670" height="676" key="search.everywhere.popup/0.0.1280.800/-640.-1080.1920.1080/1280.-1120.1080.1920@1280.-1120.1080.1920" timestamp="1590083523423" />
-    <state x="243" y="188" width="795" height="282" key="search.everywhere.popup/0.0.1280.800@0.0.1280.800" timestamp="1590114412804" />
+    <state x="243" y="188" width="795" height="282" key="search.everywhere.popup/0.0.1280.800@0.0.1280.800" timestamp="1590128196155" />
   </component>
 </project>

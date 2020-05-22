@@ -9,7 +9,7 @@ import Header from "../../organisms/Header";
 
 const Chrome = ({ children }) => {
   Chrome.propTypes = {
-    children: PropTypes.arrayOf(PropTypes.node).isRequired
+    children: PropTypes.objectOf(PropTypes.any).isRequired
   };
 
   const baseclass = "chrome";
