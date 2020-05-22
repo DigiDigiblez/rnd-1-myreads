@@ -67,8 +67,9 @@ const Search = () => {
 
     if (ourBook) {
       if (ourBook.shelf === "currentlyReading") shelfName = "Currently Reading";
-      if (ourBook.shelf === "wantToRead") shelfName = "Want to Read";
-      if (ourBook.shelf === "read") shelfName = "Read";
+      else if (ourBook.shelf === "wantToRead") shelfName = "Want to Read";
+      else if (ourBook.shelf === "read") shelfName = "Read";
+      else shelfName = "None";
     }
 
     return shelfName;
@@ -95,20 +96,18 @@ const Search = () => {
             <ol className="books-grid">
               {state.searchBooks && state.searchBooks.length > 0
                 ? state.searchBooks.map(book => (
-                    <li key={book.id}>
-                      <Book
-                        key={book.id}
-                        id={book.id}
-                        title={book.title}
-                        authors={book.authors}
-                        cover={
-                          (book.imageLinks && book.imageLinks.thumbnail) ||
-                          noCover
-                        }
-                        shelf={retrieveShelfName(book.id)}
-                        setLastBookChanged={id => setLastBookChanged(id)}
-                      />
-                    </li>
+                    <Book
+                      key={book.id}
+                      id={book.id}
+                      title={book.title}
+                      authors={book.authors}
+                      cover={
+                        (book.imageLinks && book.imageLinks.thumbnail) ||
+                        noCover
+                      }
+                      shelf={retrieveShelfName(book.id) || "None"}
+                      setLastBookChanged={id => setLastBookChanged(id)}
+                    />
                   ))
                 : "No searchBooks match the current search."}
             </ol>

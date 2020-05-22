@@ -7,6 +7,7 @@ import { ROUTES } from "../../pages/Routes/route";
 import Chrome from "../../templates/Chrome";
 import Bookshelf from "../Bookshelf/Bookshelf";
 import Book from "../../molecules/Book/Book";
+import noCover from "../../../icons/fallback-thumbnail.png";
 
 const List = () => {
   const baseclass = "list";
@@ -76,7 +77,10 @@ const List = () => {
                       id={book.id}
                       title={book.title}
                       authors={book.authors}
-                      cover={book.imageLinks.thumbnail}
+                      cover={
+                        (book.imageLinks && book.imageLinks.thumbnail) ||
+                        noCover
+                      }
                       shelf={bookshelfTitle}
                       setLastBookChanged={id => setLastBookChanged(id)}
                     />

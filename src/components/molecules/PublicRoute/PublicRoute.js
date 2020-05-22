@@ -6,7 +6,7 @@ const PublicRoute = ({ exact, path, component }) => {
   PublicRoute.propTypes = {
     exact: PropTypes.bool.isRequired,
     path: PropTypes.string.isRequired,
-    component: PropTypes.node.isRequired
+    component: PropTypes.any.isRequired
   };
 
   return <Route exact={exact} path={path} component={component} />;

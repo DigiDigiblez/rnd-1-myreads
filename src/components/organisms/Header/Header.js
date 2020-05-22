@@ -13,7 +13,10 @@ const Header = () => {
     <header className={baseclass}>
       <Logo className={`${baseclass}_logo`} />
       <div className={`${baseclass}__extras`}>
-        <Inbox className={`${baseclass}__extras_inbox`} />
+        <Inbox
+          onClick={() => alert("That's a nice bit of wishful thinking ;D")}
+          className={`${baseclass}__extras_inbox`}
+        />
         <Hamburger className={`${baseclass}__extras_hamburger`} />
       </div>
     </header>

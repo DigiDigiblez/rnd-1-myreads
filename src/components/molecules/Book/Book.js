@@ -10,15 +10,16 @@ const Book = ({ id, title, authors, cover, shelf, setLastBookChanged }) => {
   const baseclass = "book";
 
   Book.propTypes = {
-    id: PropTypes.number.isRequired,
+    id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     authors: PropTypes.arrayOf(PropTypes.string),
     cover: PropTypes.string,
-    shelf: PropTypes.string.isRequired,
+    shelf: PropTypes.string,
     setLastBookChanged: PropTypes.func.isRequired
   };
 
   Book.defaultProps = {
+    shelf: null,
     cover: null,
     authors: []
   };
