@@ -1,6 +1,8 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 import Container from "../../atoms/Container";
+import { ROUTES } from "../../pages/Routes/route";
 import Chrome from "../../templates/Chrome";
 
 const Search = () => {
@@ -11,7 +13,9 @@ const Search = () => {
       <Container className={baseclass}>
         <div className="search-books">
           <div className="search-books-bar">
-            <button className="close-search">Close</button>
+            <NavLink to={ROUTES.LIST}>
+              <button className="close-search">Close</button>
+            </NavLink>
             <div className="search-books-input-wrapper">
               <input type="text" placeholder="Search by title or author" />
             </div>

@@ -6,9 +6,9 @@ import { ReactComponent as Hamburger } from "../../../icons/hamburger.svg";
 import { ReactComponent as Inbox } from "../../../icons/inbox.svg";
 import { ReactComponent as Logo } from "../../../icons/logo.svg";
 
-const baseclass = "header";
-
 const Header = () => {
+  const baseclass = "header";
+
   return (
     <header className={baseclass}>
       <Logo className={`${baseclass}_logo`} />
