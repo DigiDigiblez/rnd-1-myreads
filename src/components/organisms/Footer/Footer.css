@@ -11,3 +11,7 @@
   color: white;
   background-color: #333333;
 }
+
+small {
+  font-size: medium;
+}
