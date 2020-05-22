@@ -3,7 +3,9 @@
 #### Introduction
 Manage your own personal library of books. You can even search for new books to add to your library!
 
-This app was built using atomic design principles and is mobile-first :).
+This app was built using atomic design principles and is mobile-first :). 
+
+In addition, going to any route other than "/" and "/search" will hit a 404, securing the user experience, and transporting the user back to the list page.
 
 ### Coding style & conventions
 This project uses [ESLint](https://eslint.org/) and [Prettier](https://prettier.io/).
