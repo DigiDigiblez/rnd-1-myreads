@@ -12,7 +12,7 @@ const Bookshelf = ({ title, children }) => {
   return (
     <div className={baseclass}>
       <h2 className={`${baseclass}-title`}>{title}</h2>
-      <div className={`${baseclass}-books`}>
+      <div className={`${baseclass}-searchBooks`}>
         <ol className="books-grid">{children}</ol>
       </div>
     </div>

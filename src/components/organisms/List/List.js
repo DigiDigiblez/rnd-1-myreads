@@ -14,7 +14,7 @@ const List = () => {
   const [lastBookChanged, setLastBookChanged] = useState();
 
   const [state, setState] = useState({
-    books: {
+    ourBooks: {
       "Currently Reading": [],
       "Want to Read": [],
       Read: []
@@ -22,12 +22,12 @@ const List = () => {
   });
 
   useEffect(() => {
-    getAll().then(books => {
+    getAll().then(searchBooks => {
       const currentlyReading = [];
       const wantToRead = [];
       const read = [];
 
-      books.map(book => {
+      searchBooks.map(book => {
         switch (book.shelf) {
           case "currentlyReading": {
             currentlyReading.push(book);
@@ -48,8 +48,8 @@ const List = () => {
 
         setState({
           ...state,
-          books: {
-            ...state.books,
+          ourBooks: {
+            ...state.ourBooks,
             "Currently Reading": currentlyReading,
             "Want to Read": wantToRead,
             Read: read
@@ -68,9 +68,9 @@ const List = () => {
         <div className="list-books">
           <div className="list-books-content">
             <div>
-              {Object.keys(state.books).map(bookshelfTitle => (
+              {Object.keys(state.ourBooks).map(bookshelfTitle => (
                 <Bookshelf key={bookshelfTitle} title={bookshelfTitle}>
-                  {state.books[bookshelfTitle].map(book => (
+                  {state.ourBooks[bookshelfTitle].map(book => (
                     <Book
                       key={book.id}
                       id={book.id}

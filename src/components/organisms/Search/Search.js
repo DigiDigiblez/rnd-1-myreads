@@ -1,51 +1,78 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 
-import { search } from "../../../BooksAPI";
+import { getAll, search } from "../../../BooksAPI";
+import noCover from "../../../icons/fallback-thumbnail.png";
 import Container from "../../atoms/Container";
 import Book from "../../molecules/Book/Book";
 import { ROUTES } from "../../pages/Routes/route";
 import Chrome from "../../templates/Chrome";
-import noCover from "../../../icons/fallback-thumbnail.png";
 
 const Search = () => {
   const baseclass = "search";
 
   const [searchQuery, setSearchQuery] = useState("");
+  const [lastBookChanged, setLastBookChanged] = useState();
 
   const handleSearchQuery = event => {
     setSearchQuery(event.target.value);
   };
 
   const [state, setState] = useState({
-    books: []
+    ourBooks: [],
+    searchBooks: []
   });
 
+  // Get all of our books on mount.
+  useEffect(() => {
+    getAll().then(books => {
+      setState({
+        ...state,
+        ourBooks: books
+      });
+    });
+  }, []);
+
+  // Get all search results books on search.
   useEffect(() => {
     (searchQuery &&
       search(searchQuery)
-        .then(books => {
-          if (books.error) {
+        .then(searchBooks => {
+          if (searchBooks.error) {
             setState({
               ...state,
-              books: []
+              searchBooks: []
             });
 
-            return books.error;
+            return searchBooks.error;
           }
-          if (books) {
+          if (searchBooks) {
             setState({
               ...state,
-              books
+              searchBooks
             });
           }
         })
         .catch(err => {})) ||
       setState({
         ...state,
-        books: []
+        searchBooks: []
       });
   }, [searchQuery]);
+
+  const retrieveShelfName = bookId => {
+    const ourBook = state.ourBooks.find(book => book.id === bookId);
+
+    let shelfName;
+
+    if (ourBook) {
+      if (ourBook.shelf === "currentlyReading") shelfName = "Currently Reading";
+      if (ourBook.shelf === "wantToRead") shelfName = "Want to Read";
+      if (ourBook.shelf === "read") shelfName = "Read";
+    }
+
+    return shelfName;
+  };
 
   return (
     <Chrome>
@@ -66,8 +93,8 @@ const Search = () => {
           </div>
           <div className="search-books-results">
             <ol className="books-grid">
-              {state.books && state.books.length > 0
-                ? state.books.map(book => (
+              {state.searchBooks && state.searchBooks.length > 0
+                ? state.searchBooks.map(book => (
                     <li key={book.id}>
                       <Book
                         key={book.id}
@@ -78,10 +105,12 @@ const Search = () => {
                           (book.imageLinks && book.imageLinks.thumbnail) ||
                           noCover
                         }
+                        shelf={retrieveShelfName(book.id)}
+                        setLastBookChanged={id => setLastBookChanged(id)}
                       />
                     </li>
                   ))
-                : "No books match the current search."}
+                : "No searchBooks match the current search."}
             </ol>
           </div>
         </div>
