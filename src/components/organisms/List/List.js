@@ -11,6 +11,8 @@ import Book from "../../molecules/Book/Book";
 const List = () => {
   const baseclass = "list";
 
+  const [lastBookChanged, setLastBookChanged] = useState();
+
   const [state, setState] = useState({
     books: {
       "Currently Reading": [],
@@ -26,8 +28,6 @@ const List = () => {
       const read = [];
 
       books.map(book => {
-        console.log(book);
-
         switch (book.shelf) {
           case "currentlyReading": {
             currentlyReading.push(book);
@@ -57,7 +57,10 @@ const List = () => {
         });
       });
     });
-  }, []);
+
+    // Resetting the flag allows for moving the same book multiple times.
+    setLastBookChanged(null);
+  }, [lastBookChanged]);
 
   return (
     <Container className={baseclass}>
@@ -66,12 +69,16 @@ const List = () => {
           <div className="list-books-content">
             <div>
               {Object.keys(state.books).map(bookshelfTitle => (
-                <Bookshelf title={bookshelfTitle}>
+                <Bookshelf key={bookshelfTitle} title={bookshelfTitle}>
                   {state.books[bookshelfTitle].map(book => (
                     <Book
+                      key={book.id}
+                      id={book.id}
                       title={book.title}
                       authors={book.authors}
                       cover={book.imageLinks.thumbnail}
+                      shelf={bookshelfTitle}
+                      setLastBookChanged={id => setLastBookChanged(id)}
                     />
                   ))}
                 </Bookshelf>

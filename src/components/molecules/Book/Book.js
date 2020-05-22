@@ -1,28 +1,43 @@
 import "./Book.css";
 
 import React from "react";
+import { update } from "../../../BooksAPI";
 
-const Book = ({ title, authors, cover }) => {
+const Book = ({ id, title, authors, cover, shelf, setLastBookChanged }) => {
+  const baseclass = "book";
+
+  const handleShelfChange = ({ target }) =>
+    update(id, target.value).then(() => setLastBookChanged(id));
+
   return (
-    <li>
-      <div className="book">
+    <li key={id}>
+      <div className={baseclass}>
         <div className="book-top">
           <div
             className="book-cover"
             style={{
-              width: 150,
-              height: 200,
+              width: 128,
+              height: 190,
               backgroundImage: `url(${cover})`
             }}
           />
           <div className="book-shelf-changer">
-            <select>
+            <select onChange={handleShelfChange}>
               <option value="move" disabled>
                 Move to...
               </option>
-              <option value="currentlyReading">Currently Reading</option>
-              <option value="wantToRead">Want to Read</option>
-              <option value="read">Read</option>
+              <option
+                value="currentlyReading"
+                selected={shelf === "Currently Reading"}
+              >
+                Currently Reading
+              </option>
+              <option value="wantToRead" selected={shelf === "Want to Read"}>
+                Want to Read
+              </option>
+              <option value="read" selected={shelf === "Read"}>
+                Read
+              </option>
               <option value="none">None</option>
             </select>
           </div>
@@ -30,7 +45,7 @@ const Book = ({ title, authors, cover }) => {
         <div className="book-title">{title}</div>
         <div className="book-authors">
           {authors.map((author, i) => (
-            <span className="author">
+            <span key={author} className="author">
               {author}
               {/* Add comma only if more than one author and not last author */}
               {authors.length > 1 && i <= authors.length - 2 && ","}
