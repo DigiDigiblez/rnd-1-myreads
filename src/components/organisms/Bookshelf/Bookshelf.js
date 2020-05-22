@@ -1,10 +1,18 @@
+import PropTypes from "prop-types";
 import React from "react";
 
 const Bookshelf = ({ title, children }) => {
+  const baseclass = "bookshelf";
+
+  Bookshelf.propTypes = {
+    title: PropTypes.string.isRequired,
+    children: PropTypes.arrayOf(PropTypes.node).isRequired
+  };
+
   return (
-    <div className="bookshelf">
-      <h2 className="bookshelf-title">{title}</h2>
-      <div className="bookshelf-books">
+    <div className={baseclass}>
+      <h2 className={`${baseclass}-title`}>{title}</h2>
+      <div className={`${baseclass}-books`}>
         <ol className="books-grid">{children}</ol>
       </div>
     </div>

@@ -1,10 +1,21 @@
 import "./Book.css";
 
+import PropTypes from "prop-types";
+
 import React from "react";
 import { update } from "../../../BooksAPI";
 
 const Book = ({ id, title, authors, cover, shelf, setLastBookChanged }) => {
   const baseclass = "book";
+
+  Book.propTypes = {
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    authors: PropTypes.arrayOf(PropTypes.string).isRequired,
+    cover: PropTypes.string.isRequired,
+    shelf: PropTypes.string.isRequired,
+    setLastBookChanged: PropTypes.func.isRequired
+  };
 
   const handleShelfChange = ({ target }) =>
     update(id, target.value).then(() => setLastBookChanged(id));

@@ -1,5 +1,6 @@
 import "./Chrome.css";
 
+import PropTypes from "prop-types";
 import React from "react";
 
 import Container from "../../atoms/Container";
@@ -7,6 +8,10 @@ import Footer from "../../organisms/Footer";
 import Header from "../../organisms/Header";
 
 const Chrome = ({ children }) => {
+  Chrome.propTypes = {
+    children: PropTypes.arrayOf(PropTypes.node).isRequired
+  };
+
   const baseclass = "chrome";
 
   return (
